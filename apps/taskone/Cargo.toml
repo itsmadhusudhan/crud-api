@@ -1,0 +1,23 @@
+[package]
+name = "taskone"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+chrono = { version = "0.4.31", features = ["serde"] }
+actix-web = "4.4.1"
+actix-rt = "2.9.0"
+serde = { version = "1.0.193", features = ["derive"] }
+serde_json = "1.0.108"
+sqlx = { version = "0.7.3", features = ["sqlite", "runtime-tokio", "tls-native-tls","uuid","chrono"] }
+uuid = { version = "1.6.1", features = ["serde", "v4"] }
+thiserror = "1.0.52"
+validator = { version = "0.16.1", features = ["derive"] }
+env_logger = "0.10.1"
+log={ version = "0.4", features = ["release_max_level_off"] }
+async-trait = "0.1.75"
+
+[profile.dev.package.sqlx-macros]
+opt-level = 3
